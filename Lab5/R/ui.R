@@ -12,10 +12,12 @@ shinyUI(fluidPage(
       
       selectInput("kommun", 
                   label = "Choose a kommun",
+                  choices = kommun1,
                   selected = "Linköping"),
       
       selectInput("party",
                   label = "Choose party",
+                  choices = party1,
                   selected = "M")
       ),
     
