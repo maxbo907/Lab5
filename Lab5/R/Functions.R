@@ -1,3 +1,6 @@
+library(httr)
+library(xlsx)
+
 lan1 <- unlist(lapply(1:25, as.character))
 kom1 <- c("1", "2", "3", "4", "5", "6", "7", "9", "10", "12", "13", "14", 
          "15", "17", "18", "19", "20", "21", "22", "23", "25", "26", "27", 
@@ -7,7 +10,7 @@ kom1 <- c("1", "2", "3", "4", "5", "6", "7", "9", "10", "12", "13", "14",
          "72", "73", "75", "76", "77", "78", "80", "81", "82", "83", "84", 
          "85", "86", "87", "88", "89", "90", "91", "92", "93", "94", "95",
          "96", "97", "98", "99")
-län1 <- c("","Blekinge län", "Dalarnas län", "Gävleborgs län", "Gotlands län", 
+laan1 <- c("","Blekinge län", "Dalarnas län", "Gävleborgs län", "Gotlands län", 
          "Hallands län", "Jämtlands län", "Jönköpings län", "Kalmar län", 
          "Kronobergs län", "Norrbottens län", "Örebro län", 
          "Östergötlands län", "Skåne län", "Södermanlands län", 
@@ -76,28 +79,28 @@ kommun1 <- c("", "Ale", "Alingsås", "Älmhult", "Älvdalen", "Alvesta",
 party1 <- c("M", "C", "FP", "KD", "S", "V", "MP", "SD", 
             "FI", "OVR", "BL", "OG")
 
+para <- function(lan = NULL, kom = NULL, laan = NULL, 
+                      kommun = NULL, party = NULL){
+  if(!is.null(lan)){stopifnot(lan %in% lan1)} 
+  if(!is.null(kom)){stopifnot(kom %in% kom1)}
+  if(!is.null(laan)){stopifnot(laan %in% laan1)}
+  if(!is.null(kommun)){stopifnot(kommun %in% kommun1)}
+  if(!is.null(party)){stopifnot(party %in% party1)}
+  result <- list(c("lan : ", lan), c("kom : ", kom), c("län : ", laan), 
+                 c("kommun : ", kommun), c("party : ", party))
+  return(result)
+}
+
 q<-GET("http://www.val.se/val/val2014/statistik/2014_riksdagsval_per_kommun.xls")
 kommun<-content(q,"raw")
 writeBin(kommun,"kommun.xlsx")
-num <- rep("numeric", length(theData)-4)
+num <- rep("numeric", length(kommun)-4)
 chara <- rep("character", 4)
 nam <- c(chara, num)
 theData <- read.xlsx("kommun.xlsx",sheetIndex = 1,header = TRUE, colClasses = nam, startRow = 3, encoding = "UTF-8")
 
 
-para <- function(lan = NULL, kom = NULL, län = NULL, 
-                      kommun = NULL, party = NULL){
-  if(!is.null(lan)){stopifnot(lan %in% lan1)} 
-  if(!is.null(kom)){stopifnot(kom %in% kom1)}
-  if(!is.null(län)){stopifnot(län %in% län1)}
-  if(!is.null(kommun)){stopifnot(kommun %in% kommun1)}
-  if(!is.null(party)){stopifnot(party %in% party1)}
-  result <- list(c("lan : ", lan), c("kom : ", kom), c("län : ", län), 
-                 c("kommun : ", kommun), c("party : ", party))
-  return(result)
-}
-
 lan_func<-function(lan){
-        kommun_vect<-c(theData$KOMMUN[theData$LÄN==lan])
+        kommun_vect<-c(theData$KOMMUN[theData$LäN==lan])
         return(kommun_vect)
 }
