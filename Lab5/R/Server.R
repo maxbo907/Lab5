@@ -7,6 +7,7 @@ shinyServer(function(input, output){
   num <- rep("numeric", length(theData)-4)
   chara <- rep("character", 4)
   nam <- c(chara, num)
+<<<<<<< HEAD
   theData <- read.xlsx("kommun.xlsx",sheetIndex = 1,header = TRUE, 
                        colClasses = nam, startRow = 3, encoding = "UTF-8")
   
@@ -15,5 +16,14 @@ shinyServer(function(input, output){
       hist(theData[which(theData$KOMMUN==input$kommun),
                    which(names(tail(theData,n=4))=="proc")],input$kommun)
     }
+=======
+  theData <- read.xlsx("kommun.xlsx",sheetIndex = 1,header = TRUE, colClasses = nam, startRow = 3, encoding = "UTF-8")
+  new(plot)
+  lines()
+  lan<-lan_func(input$lan)
+  output$main_plot<-renderPlot(
+          party<-paste(input$party,"proc",sep="."),
+          plot(theData[which(theData$LÄN==lan),which(names(theData)==party)])
+>>>>>>> 3df051ef264e5a8842a1f710b3c8b2082447c439
   )
 })
