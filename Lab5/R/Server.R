@@ -1,5 +1,6 @@
 library(httr)
 library(xlsx)
+
 shinyServer(function(input, output){
   q<-GET("http://www.val.se/val/val2014/statistik/2014_riksdagsval_per_kommun.xls")
   kommun<-content(q,"raw")
@@ -7,22 +8,22 @@ shinyServer(function(input, output){
   num <- rep("numeric", length(theData)-4)
   chara <- rep("character", 4)
   nam <- c(chara, num)
-  
-  theData <- read.xlsx("kommun.xlsx",sheetIndex = 1,header = TRUE, 
-                       colClasses = nam, startRow = 3, encoding = "UTF-8")
-  
-  output$main_plot <- renderPlot(
-    if(!(input$kommun=="") && is.null(input$party)){
-      hist(theData[which(theData$KOMMUN==input$kommun),
-                   which(names(tail(theData,n=4))=="proc")],input$kommun)
-    }
-    
   theData <- read.xlsx("kommun.xlsx",sheetIndex = 1,header = TRUE, colClasses = nam, startRow = 3, encoding = "UTF-8")
-  new(plot)
-  lines()
-  lan<-lan_func(input$lan)
-  output$main_plot<-renderPlot(
-          party<-paste(input$party,"proc",sep="."),
-          plot(theData[which(theData$LÄN==lan),which(names(theData)==party)])
-  )
+  
+#   output$main_plot <- renderPlot(
+#     if(!(input$kommun=="") && is.null(input$party)){
+#       hist(theData[which(theData$KOMMUN==input$kommun),
+#                    which(names(tail(theData,n=4))=="proc")],input$kommun)
+#     })
+    
+
+#  lan<-lan_func(input$lan)
+  output$text1 <- renderText({
+          paste("input$party : ", input$party)
+  })
+
+#   output$main_plot<-renderPlot({
+#           party<-paste(input$party,"proc",sep=".")
+#           plot(theData[which(theData$LÄN==lan),which(names(theData)==party)])
+#   })
 })
