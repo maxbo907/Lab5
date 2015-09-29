@@ -76,6 +76,15 @@ kommun1 <- c("", "Ale", "Alingsås", "Älmhult", "Älvdalen", "Alvesta",
 party1 <- c("M", "C", "FP", "KD", "S", "V", "MP", "SD", 
             "FI", "OVR", "BL", "OG")
 
+q<-GET("http://www.val.se/val/val2014/statistik/2014_riksdagsval_per_kommun.xls")
+kommun<-content(q,"raw")
+writeBin(kommun,"kommun.xlsx")
+num <- rep("numeric", length(theData)-4)
+chara <- rep("character", 4)
+nam <- c(chara, num)
+theData <- read.xlsx("kommun.xlsx",sheetIndex = 1,header = TRUE, colClasses = nam, startRow = 3, encoding = "UTF-8")
+
+
 para <- function(lan = NULL, kom = NULL, län = NULL, 
                       kommun = NULL, party = NULL){
   if(!is.null(lan)){stopifnot(lan %in% lan1)} 
