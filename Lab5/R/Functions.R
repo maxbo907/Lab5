@@ -87,3 +87,8 @@ para <- function(lan = NULL, kom = NULL, län = NULL,
                  c("kommun : ", kommun), c("party : ", party))
   return(result)
 }
+
+lan_func<-function(lan){
+        kommun_vect<-c(theData$KOMMUN[theData$LÄN==lan])
+        return(kommun_vect)
+}

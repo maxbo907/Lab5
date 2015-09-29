@@ -6,7 +6,7 @@ shinyUI(fluidPage(
         # Application title
         titlePanel("Hello Shiny!"),
         
-        # Sidebar with a slider input for the number of bins
+        #Sidebar with a slider input for the number of bins
         sidebarLayout(
                 sidebarPanel(
                         sliderInput("bins",

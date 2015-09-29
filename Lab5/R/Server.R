@@ -1,6 +1,6 @@
 library(httr)
 library(xlsx)
-shinyServer(function(input, output)){
+shinyServer(function(input, output){
   q<-GET("http://www.val.se/val/val2014/statistik/2014_riksdagsval_per_kommun.xls")
   kommun<-content(q,"raw")
   writeBin(kommun,"kommun.xlsx")
@@ -10,4 +10,9 @@ shinyServer(function(input, output)){
   theData <- read.xlsx("kommun.xlsx",sheetIndex = 1,header = TRUE, colClasses = nam, startRow = 3, encoding = "UTF-8")
   new(plot)
   lines()
-}
+  lan<-lan_func(input$lan)
+  output$main_plot<-renderPlot(
+          party<-paste(input$party,"proc",sep="."),
+          plot(theData[which(theData$LÄN==lan),which(names(theData)==party)])
+  )
+})

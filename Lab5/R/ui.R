@@ -1,26 +1,26 @@
-shinyUI(fluidPage(
+shinyUI(basicPage(
   titlePanel("Election results"),
   
   sidebarLayout(
     sidebarPanel(
       helpText("Create graphs"),
       
-      selectInput("län", 
+      selectInput("lan", 
                   label = "Choose a län",
                   choices = län1,
                   selected = "Östergötlands län"),
       
-      selectInput("kommun", 
-                  label = "Choose a kommun",
-                  selected = "Linköping"),
+#       selectInput("kommun", 
+#                   label = "Choose a kommun",
+#                   choices=lan,
+#                   selected = "Linköping"),
       
       selectInput("party",
                   label = "Choose party",
+                  choices=party1,
                   selected = "M")
-      ),
-    
-    mainPanel(
-      textOutput("text1")
-    )
-  )
+),
+
+mainPanel(plotOutput("main_plot"))
+)
 ))
