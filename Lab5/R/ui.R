@@ -8,19 +8,20 @@ shinyUI(fluidPage(
       selectInput("län", 
                   label = "Choose a län",
                   choices = län1,
-                  selected = "Östergötlands län"),
-      
+                  selected = ""),
+
+       
       selectInput("kommun", 
                   label = "Choose a kommun",
                   choices = kommun1,
-                  selected = "Linköping"),
+                  selected = ""),
       
-      selectInput("party",
-                  label = "Choose party",
-                  choices = party1,
-                  selected = "M")
+      checkboxGroupInput("party",
+                    label = "Choose parties",
+                    choices = party1
+                  )
       ),
-    
+
     mainPanel(
       textOutput("text1")
     )
