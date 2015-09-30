@@ -12,7 +12,7 @@ theData <- read.xlsx("kommun.xlsx",sheetIndex = 1,
                      startRow = 3, encoding = "UTF-8",
                      stringsAsFactors=FALSE)
 
-
+names(theData)[3]<-"LAAN"
 
 lan1 <- unlist(lapply(1:25, as.character))
 kom1 <- c("1", "2", "3", "4", "5", "6", "7", "9", "10", "12", "13", "14", 
