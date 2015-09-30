@@ -1,6 +1,19 @@
 library(httr)
 library(xlsx)
 
+q<-GET("http://www.val.se/val/val2014/statistik/2014_riksdagsval_per_kommun.xls")
+kommun<-content(q,"raw")
+writeBin(kommun,"kommun.xlsx")
+num <- rep("numeric", length(kommun)-4)
+chara <- rep("character", 4)
+nam <- c(chara, num)
+theData <- read.xlsx("kommun.xlsx",sheetIndex = 1,
+                     header = TRUE, colClasses = nam, 
+                     startRow = 3, encoding = "UTF-8",
+                     stringsAsFactors=FALSE)
+
+
+
 lan1 <- unlist(lapply(1:25, as.character))
 kom1 <- c("1", "2", "3", "4", "5", "6", "7", "9", "10", "12", "13", "14", 
          "15", "17", "18", "19", "20", "21", "22", "23", "25", "26", "27", 
@@ -90,14 +103,6 @@ para <- function(lan = NULL, kom = NULL, laan = NULL,
                  c("kommun : ", kommun), c("party : ", party))
   return(result)
 }
-
-q<-GET("http://www.val.se/val/val2014/statistik/2014_riksdagsval_per_kommun.xls")
-kommun<-content(q,"raw")
-writeBin(kommun,"kommun.xlsx")
-num <- rep("numeric", length(kommun)-4)
-chara <- rep("character", 4)
-nam <- c(chara, num)
-theData <- read.xlsx("kommun.xlsx",sheetIndex = 1,header = TRUE, colClasses = nam, startRow = 3, encoding = "UTF-8")
 
 
 lan_func<-function(lan){
