@@ -1,5 +1,18 @@
 library(httr)
 library(xlsx)
+library(roxygen2)
+
+
+#' @title Functions.
+#' @description Uses a GET-verb to connect to val.se and downloads a xls-file, which is
+#' converted and read by a read.xlsx-command into the actual data-file we need. From this
+#' file it extracts the things we need. The shiny app then reads this by calling the 
+#' package Lab5, which only consists of this data.
+#' @param No params
+#' @author Maxime Bonneau, Niclas Lovsjö
+#'
+#'
+
 
 q<-GET("http://www.val.se/val/val2014/statistik/2014_riksdagsval_per_kommun.xls")
 kommun<-content(q,"raw")
