@@ -1,0 +1,11 @@
+Package: Lab5
+Title: Connect to an API
+Version: 0.0.0.9000
+Authors: Niclas Lovsj<c3><b6> & Maxime Bonneau
+Description: Connects to a web API and a shiny application
+Depends: R (>= 3.2.2)
+License: GPL-2
+LazyData: true
+Suggests: testthat
+NeedsCompilation: no
+Packaged: 2015-10-21 08:34:05 UTC; niclaslovsjo

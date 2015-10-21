@@ -1,0 +1,10 @@
+* using log directory ‘/Users/niclaslovsjo/Desktop/Kurser/R.programming/labbar/lab5/Lab5/Lab5.Rcheck’
+* using R version 3.2.2 (2015-08-14)
+* using platform: x86_64-apple-darwin13.4.0 (64-bit)
+* using session charset: UTF-8
+* using option ‘--as-cran’
+* checking for file ‘Lab5/DESCRIPTION’ ... ERROR
+Required fields missing or empty:
+  ‘Author’ ‘Maintainer’
+* DONE
+Status: 1 ERROR
