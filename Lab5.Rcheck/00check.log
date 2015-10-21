@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 * using log directory 'C:/Users/Maxime/Documents/Lab5/Lab5.Rcheck'
 * using R version 3.2.2 (2015-08-14)
 * using platform: x86_64-w64-mingw32 (64-bit)
@@ -15,5 +16,15 @@
 * checking whether package 'Lab5' can be installed ... ERROR
 Installation failed.
 See 'C:/Users/Maxime/Documents/Lab5/Lab5.Rcheck/00install.out' for details.
+=======
+* using log directory ‘/Users/niclaslovsjo/Desktop/Kurser/R.programming/labbar/lab5/Lab5/Lab5.Rcheck’
+* using R version 3.2.2 (2015-08-14)
+* using platform: x86_64-apple-darwin13.4.0 (64-bit)
+* using session charset: UTF-8
+* using option ‘--as-cran’
+* checking for file ‘Lab5/DESCRIPTION’ ... ERROR
+Required fields missing or empty:
+  ‘Author’ ‘Maintainer’
+>>>>>>> 143d687a896216470d1f4ed6f661cc391d3974af
 * DONE
 Status: 1 ERROR

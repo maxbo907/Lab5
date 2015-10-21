@@ -1,12 +1,20 @@
 Package: Lab5
 Title: Connect to an API
 Version: 0.0.0.9000
+<<<<<<< HEAD
 Author: Niclas Lovsj<c3><b6> & Maxime Bonneau
 Maintainer: <maxbo907@student.liu.se>
+=======
+Authors: Niclas Lovsj<c3><b6> & Maxime Bonneau
+>>>>>>> 143d687a896216470d1f4ed6f661cc391d3974af
 Description: Connects to a web API and a shiny application
 Depends: R (>= 3.2.2)
 License: GPL-2
 LazyData: true
 Suggests: testthat
 NeedsCompilation: no
+<<<<<<< HEAD
 Packaged: 2015-10-21 08:21:49 UTC; Maxime
+=======
+Packaged: 2015-10-21 08:34:05 UTC; niclaslovsjo
+>>>>>>> 143d687a896216470d1f4ed6f661cc391d3974af
