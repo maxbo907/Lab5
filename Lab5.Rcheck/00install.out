@@ -1,0 +1,9 @@
+* installing *source* package 'Lab5' ...
+** R
+Error in parse(outFile) : 
+  C:/Users/Maxime/Documents/Lab5/Lab5.Rcheck/00_pkg_src/Lab5/R/Functions.R:122:49: unexpected input
+121: lan_func<-function(lan){
+122:         kommun_vect<-c(theData$KOMMUN[theData$Lä
+                                                     ^
+ERROR: unable to collate and parse R files for package 'Lab5'
+* removing 'C:/Users/Maxime/Documents/Lab5/Lab5.Rcheck/Lab5'
