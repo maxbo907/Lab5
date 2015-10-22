@@ -10,3 +10,4 @@ LazyData: true
 Suggests: testthat
 NeedsCompilation: no
 Packaged: 2015-10-21 08:37:27 UTC; niclaslovsjo
+Built: R 3.2.2; ; 2015-10-21 08:37:28 UTC; unix

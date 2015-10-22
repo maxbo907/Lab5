@@ -8,14 +8,14 @@
  $ url        : chr "http://www.val.se/val/val2014/statistik/2014_riksdagsval_per_kommun.xls"
  $ status_code: int 200
  $ headers    :List of 9
-  ..$ date          : chr "Wed, 21 Oct 2015 08:34:00 GMT"
+  ..$ date          : chr "Wed, 21 Oct 2015 08:37:23 GMT"
   ..$ server        : chr "Apache"
   ..$ last-modified : chr "Fri, 03 Oct 2014 06:18:22 GMT"
   ..$ etag          : chr "\\"10c358-1d400-5047eb32cc780\\""
   ..$ accept-ranges : chr "bytes"
   ..$ content-length: chr "119808"
   ..$ cache-control : chr "max-age=3600"
-  ..$ expires       : chr "Wed, 21 Oct 2015 09:34:00 GMT"
+  ..$ expires       : chr "Wed, 21 Oct 2015 09:37:23 GMT"
   ..$ content-type  : chr "application/vnd.ms-excel"
   ..- attr(*, "class")= chr [1:2] "insensitive" "list"
  $ all_headers:List of 1
@@ -23,14 +23,14 @@
   .. ..$ status : int 200
   .. ..$ version: chr "HTTP/1.1"
   .. ..$ headers:List of 9
-  .. .. ..$ date          : chr "Wed, 21 Oct 2015 08:34:00 GMT"
+  .. .. ..$ date          : chr "Wed, 21 Oct 2015 08:37:23 GMT"
   .. .. ..$ server        : chr "Apache"
   .. .. ..$ last-modified : chr "Fri, 03 Oct 2014 06:18:22 GMT"
   .. .. ..$ etag          : chr "\\"10c358-1d400-5047eb32cc780\\""
   .. .. ..$ accept-ranges : chr "bytes"
   .. .. ..$ content-length: chr "119808"
   .. .. ..$ cache-control : chr "max-age=3600"
-  .. .. ..$ expires       : chr "Wed, 21 Oct 2015 09:34:00 GMT"
+  .. .. ..$ expires       : chr "Wed, 21 Oct 2015 09:37:23 GMT"
   .. .. ..$ content-type  : chr "application/vnd.ms-excel"
   .. .. ..- attr(*, "class")= chr [1:2] "insensitive" "list"
  $ cookies    :'data.frame':	0 obs. of  7 variables:
@@ -42,8 +42,8 @@
   ..$ name      : logi(0) 
   ..$ value     : logi(0) 
  $ content    : raw [1:119808] d0 cf 11 e0 ...
- $ date       : POSIXct[1:1], format: "2015-10-21 08:34:00"
- $ times      : Named num [1:6] 0 0.00493 0.00514 0.00516 0.10835 ...
+ $ date       : POSIXct[1:1], format: "2015-10-21 08:37:23"
+ $ times      : Named num [1:6] 0 0.00528 0.00551 0.00568 0.34289 ...
   ..- attr(*, "names")= chr [1:6] "redirect" "namelookup" "connect" "pretransfer" ...
  $ request    :List of 7
   ..$ method    : chr "GET"
