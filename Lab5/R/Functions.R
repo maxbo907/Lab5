@@ -1,7 +1,6 @@
 library(httr)
 library(xlsx)
 library(roxygen2)
-if("Lab5Shiny" %in% rownames(installed.packages()) == FALSE) {install.packages("Lab5Shiny")}
 library(Lab5Shiny)
 
 
